@@ -93,7 +93,7 @@ This is not seen too well above because the divisions hide the momentum. To see 
 
 <img src="4_img.PNG"/>
 
-<img src="5_img.PNG"/>
+<img src="5_img_V2.PNG"/>
 
 When trimming out the divide stages above in Figure 4, and without them performed above in Figure 5, we can see the highlighted powers of 2 are arranged the same way. This shows it does not matter if we are to perform the divide stages(see Note 1 above), we will always end with the same powers of 2 arrangement within X. We can ignore the trailing zeros as we could divide at any point to perfectly match the corresponding value in Figure 4.
 
