@@ -217,7 +217,7 @@ Below in Table 4 we can compare this potential power of 2 splitting occurrence.
 
 Within Table 4 we can see 1X+1 and 3X+1 will never create a lesser power of 2 during the combined multiplication and addition stage. The uniqueness 3X+1 has over other variants can be seen to be it will never affect the 2^1 binary slot as the overflow always results with this 2^1 slot remaining its previous value. Instead, this 2^1 slot can only be modified during the division stage.
 
-We can see variants with higher K values will have cases where the multiplication and addition stage will result in a combination of lesser power of 2 to be added. This causes the new lowest lesser power of 2 to not have increased from the original enough to have outgrown the K multiplication rate. This will lead to unexpected behaviour as this lesser power of 2 will then cause direct alterations to when the next multiplication occurs.
+We can see variants with higher K values will have cases where the multiplication and addition stage will result in a combination of lesser power of 2 to be added. This causes the new lowest lesser power of 2 to not have increased from the original enough to have outgrown the K multiplication rate. This will then also lead to unexpected behaviour as this lesser power of 2 will then cause direct alterations to when the next multiplication occurs.
 
 ## Conclusion
 We have explored the root cause of negative numbers causing loops within 3X+1 and looked at the reason why the other variants of KX+1 can cause unexpected behaviour.
