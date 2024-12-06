@@ -40,7 +40,7 @@ The core argument presented below for proving the conjecture is related to what 
 ## It Is Counterintuitive 
 At the face of it, it would appear impossible that simply adding a single power of 2 to an integer could force it to always reach a whole power of 2 if we are repeatedly multiplying by 3.
 
-The approach here is not to suggest an integer will grow until it becomes a power of 2. Instead, the idea is that the integer gains an increase of at least 1 power of 2 each addition which causes the current lowest power of 2 to always outgrow the multiplication rate. This will have a direct effect of reducing the integer in size through divisions until it reduces down towards a power of 2.
+The approach here is not to suggest an integer will grow until it becomes a power of 2. Instead, the idea is that the integer gains an increase of 1 power of 2 each addition which causes the current lowest power of 2 to always outgrow the multiplication rate. This will have a direct effect of reducing the integer in size through divisions until it reduces down towards a power of 2.
 
 ## Basic Binary Addition
 We need the understanding of basic binary addition before exploring 3X+1.
