@@ -70,7 +70,7 @@ The concept for 1X+1, 3X+1 and any other potential variant is that the potential
 
 The reason we know 1X+1 will always reach a power of 2 is because the lowest power of 2 will keep overflowing upwards as shown in Figure 1. As only the lowest power of 2 within X will be affected by the +1, this means our current lowest power of 2 is always growing at a faster rate than the others and will cause an overflow upwards each addition. 1X+1 will always eventually outgrow 1X.
 
-The divisions are also crucially significant when it comes to 3X+1, but the reason why can be shown with 1X+1. Figure 2 shows whenever the addition causes the current lowest power of 2 to overflow upwards, the divisions reduce the integer down until the now next lowest power of 2 is reduced to 1 (being placed in the rightmost binary slot). Reducing down this next highest power of 2 allows it be affected by the next +1 equally as the previous time, causing it to overflow upwards, and so on.
+The divisions are also crucially significant when it comes to 3X+1, but the reason why can be shown with 1X+1. Figure 2 shows whenever the addition causes the current lowest power of 2 to overflow upwards, the divisions reduce the integer down until the now next lowest power of 2 is reduced to 1 (being placed in the rightmost binary slot). Reducing down this next lowest power of 2 allows it be affected by the next +1 equally as the previous time, causing it to overflow upwards, and so on.
 
 This process of addition and division repeats until the current lowest power of 2 overflows through all the higher powers of 2 within finite iterations and will result in X reaching a whole power of 2.
 
