@@ -70,9 +70,9 @@ The concept for 1X+1, 3X+1 and any other potential variant is that the potential
 
 The reason we know 1X+1 will always reach a power of 2 is because the lowest power of 2 will keep overflowing upwards as shown in Figure 1. As only the lowest power of 2 within X will be affected by the +1, this means our current lowest power of 2 is always growing at a faster rate than the others and will cause an overflow upwards each addition. 1X+1 will always eventually outgrow 1X.
 
-The divisions are also crucially significant when it comes to 3X+1, but the reason why can be shown with 1X+1. Figure 2 shows whenever the addition causes the current lowest power of 2 to overflow upwards, the divisions reduce the integer down until the now next lowest power of 2 is reduced to 1 (being placed in the rightmost binary slot). Reducing down this next lowest power of 2 allows it be affected by the next +1 equally as the previous time, causing it to overflow upwards, and so on.
+The divisions are also crucially significant when it comes to 3X+1, but the reason why can be shown with 1X+1. Figure 2 shows whenever the addition causes the current lowest power of 2 to overflow upwards, the divisions reduce the integer down until the next now current lowest power of 2 is reduced to 1 (being placed in the rightmost binary slot). Reducing down this current lowest power of 2 allows it be affected by the next +1 equally as the previous time, causing it to overflow upwards, and so on.
 
-The ratio of divisions to multiplications is never important. The only importance regarding divisions is they must reduce the next lowest power of 2 down all the way to the lowest binary slot before the next multiplication. This will always happen as in any variant multiplications can only happen if the integer is currently odd.
+The ratio of divisions to multiplications is never important. The only importance regarding divisions is they must reduce the current lowest power of 2 down all the way to the lowest binary slot before the next multiplication. This will always happen as in any variant multiplications can only happen if the integer is currently odd.
 
 This process of addition and division repeats until the current lowest power of 2 overflows through all the higher powers of 2 within finite iterations and will result in X reaching a whole power of 2.
 
@@ -217,9 +217,9 @@ Below in Table 4 we can compare this potential power of 2 splitting occurrence.
 
 <img src="17_img.PNG"/>
 
-Within Table 4 we can see 1X+1 and 3X+1 will never create a lesser power of 2 during the combined multiplication and addition stage. The uniqueness 3X+1 has over other variants can be seen to be it will never affect the 2^1 binary slot as the overflow always results with this 2^1 slot remaining its previous value. Instead, this 2^1 slot can only be modified during the division stage.
+Within Table 4 we can see 1X+1 and 3X+1 will never create a lesser power of 2 during the combined multiplication and addition stage. The uniqueness 3X+1 has over other variants can be seen to be it will never affect the 2^1 binary slot. This is due to the overflow never causing additions of lesser powers of 2 and so always results with this 2^1 slot remaining its previous value. Instead, this 2^1 slot can only be modified during the division stage.
 
-We can see variants with higher K values will have cases where the multiplication and addition stage will result in a combination of lesser power of 2 to be added. This causes the new lowest lesser power of 2 to not have increased from the original enough to have outgrown the K multiplication rate. This will then also lead to unexpected behaviour as this lesser power of 2 will then cause direct alterations to when the next multiplication occurs.
+We can see variants with higher K values will have cases where the multiplication and addition stage will result in a combination of lesser power of 2 to be added. This causes the new lowest lesser power of 2 to not have increased from the original enough to have outgrown the K multiplication rate. This can then possibly lead to further unexpected behaviour as this lesser power of 2 can cause direct alterations to when the next multiplication occurs.
 
 ## Conclusion
 We have explored the root cause of negative numbers causing loops within 3X+1 and looked at the reason why the other variants of KX+1 can cause unexpected behaviour.
