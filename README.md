@@ -224,7 +224,7 @@ We have explored the root cause of negative numbers causing loops within 3X+1 an
 
 We can see that both 1X+1 and 3X+1 will function in the same way. Their multiplication and addition stages will never cause X to gain a lesser power of 2 that is below the K multiplications growth rate regardless of X’s current value.
 
-This forces 1X+1 and 3X+1 to always have their current lowest power of 2 overflow upward faster than the K multiplication leading to the lowest power of 2 inevitably outgrowing all others. The current lowest power of 2 will then become a whole power of 2. Finally, this whole power of 2 will divide down to reach 1.
+This forces 1X+1 and 3X+1 to always have their current lowest power of 2 overflow upward faster than the K multiplication. This leads to the lowest power of 2 inevitably outgrowing all others within finite iterations. The current lowest power of 2 will then become a whole power of 2. Finally, this whole power of 2 will divide down to reach 1.
 
 Therefore, we can logically conclude that the 3X+1 Collatz Conjecture is true.
 
