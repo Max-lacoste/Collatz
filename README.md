@@ -2,16 +2,16 @@
 
 Author: Max La Coste
 
-Date: 26/11/2024
+Date: 06/12/2024
 
 ## Abstract
 In attempt to prove the Collatz Conjecture focus will be towards the aspect of how the Conjecture interacts with the starting integer’s powers of 2 as the function progresses recursively.
 
-By observing the behaviour using the computer binary system we can visually see integer's the powers of 2. 
+By observing the behaviour using the computer binary system we can visually see the integer in the form of the powers of 2. 
 
-This approach will focus on exploring what causes the initial integer’s current lowest power of 2 to outgrow and consume all the rest until only it remains.
+This approach will focus on exploring what causes the initial integer’s current lowest power of 2 to always outgrow and consume all the rest until only it remains.
 
-Building on gained understanding we can then approach why negative numbers behave differently and why other variants may not behave the same as 3X+1 by comparing the behaviour of the 5X+1 variant.
+Building on gained understanding we can then approach why negative numbers behave differently and why other variants may not behave the same as 3X+1 by comparing the behaviour to disprove the 5X+1 variant.
 
 ## Introduction 
 The Collatz Conjecture has been around for many years evading a logical proof that any positive integer will become 1 within finite iterations. The idea is simple, if a number is odd, we multiply it by 3 and add 1, but when it is even, we divide by 2. We follow these two rules repeatedly until a number results in 1.
@@ -71,6 +71,8 @@ The concept for 1X+1, 3X+1 and any other potential variant is that the potential
 The reason we know 1X+1 will always reach a power of 2 is because the lowest power of 2 will keep overflowing upwards as shown in Figure 1. As only the lowest power of 2 within X will be affected by the +1, this means our current lowest power of 2 is always growing at a faster rate than the others and will cause an overflow upwards each addition. 1X+1 will always eventually outgrow 1X.
 
 The divisions are also crucially significant when it comes to 3X+1, but the reason why can be shown with 1X+1. Figure 2 shows whenever the addition causes the current lowest power of 2 to overflow upwards, the divisions reduce the integer down until the now next lowest power of 2 is reduced to 1 (being placed in the rightmost binary slot). Reducing down this next lowest power of 2 allows it be affected by the next +1 equally as the previous time, causing it to overflow upwards, and so on.
+
+The ratio of divisions to multiplications is never important. The only importance regarding divisions is they must reduce the next lowest power of 2 down all the way to the lowest binary slot before the next multiplication. This will always happen as in any variant multiplications can only happen if the integer is currently odd.
 
 This process of addition and division repeats until the current lowest power of 2 overflows through all the higher powers of 2 within finite iterations and will result in X reaching a whole power of 2.
 
@@ -177,9 +179,9 @@ It may be possible that other higher negative loops exist. However, if we know w
 ## Disproving the 5X+1 Variant
 Building further on the understanding of how 1X+1 and 3X+1 always become a power of 2, we can use logic to disprove the 5X+1 variation.
 
-When comparing 5X+1 it may seem reasonable to suggest the current lowest power of 2 could also outgrow and overflow upwards like 1X+1 or 3X+1, but we can disprove this due to the +1.
+When comparing 5X+1 it may seem reasonable to suggest the current lowest power of 2 could also always outgrow and overflow upwards like 1X+1 or 3X+1, but we can disprove this due to the +1.
 
-Below we will explore why although 5X+1 might in theory cause the lowest power of 2 to outgrow 5X it cannot. For this we will look at examples comparing the behaviour of 1X+1, 3X+1 and 5X+1, all with the starting value of 5.
+Below we will explore why although 5X+1 might in theory always cause the lowest power of 2 to outgrow 5X, it is not always true. For this we will look at examples comparing the behaviour of 1X+1, 3X+1 and 5X+1, all with the starting value of 5.
 
 ### 1X+1 Starting Value of 5
 Figure 11 below shows the 1X+1 iterations with a starting value of 5.
@@ -205,7 +207,7 @@ Unlike the 1X+1 and 3X+1 patterns, the 5X+1 has an issue that causes unexpected 
 Figure 13 above shows underlined in red where the +1 first causes an overflow into the 2^1 (second) binary slot. This is significant as all variants of KX+1(where K is an odd positive integer) can cause an overflow into this binary slot due to the +1, except for 3X+1. 
 
 ### Lesser Powers of 2
-The +1 will always increase X by one. But for the current lowest power of 2 overflow to keep outgrowing the K multiplication it needs to do this as a whole without splitting apart into lesser powers of 2.
+The +1 will always increase X by 1. But for the current lowest power of 2 overflow to keep outgrowing the K multiplication it needs to do this as a whole without splitting apart into lesser powers of 2.
 
 We know that any multiplication and addition stage will only occur on an odd number. This allows us to look at the few possible binary combinations for these variants to prove 1X+1 and 3X+1 will never have their powers split unlike other variants.
 
@@ -222,7 +224,7 @@ We can see variants with higher K values will have cases where the multiplicatio
 ## Conclusion
 We have explored the root cause of negative numbers causing loops within 3X+1 and looked at the reason why the other variants of KX+1 can cause unexpected behaviour.
 
-We can see that both 1X+1 and 3X+1 will function in the same way. Their multiplication and addition stages will never cause X to gain a lesser power of 2 that is below the K multiplications growth rate regardless of X’s current value.
+We can see that both 1X+1 and 3X+1 will function in the same way. Their multiplication and addition stages will never cause X to gain a lesser power of 2, meaning the lowest power of 2 will always be outpacing the K multiplications growth rate regardless of X’s current value.
 
 This forces 1X+1 and 3X+1 to always have their current lowest power of 2 overflow upward faster than the K multiplication. This leads to the lowest power of 2 inevitably outgrowing all others within finite iterations. The current lowest power of 2 will then become a whole power of 2. Finally, this whole power of 2 will divide down to reach 1.
 
